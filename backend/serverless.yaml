@@ -1,0 +1,35 @@
+service: common-product-system
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  # environment:
+  #   PRODUCT_NAME_TABLE: !Ref ProductTableReference
+
+# iam:
+#   role:
+#     statements:
+#       - Effect: Allow
+#         Action:
+#           - dynamodb:PutItem
+#           - dynamodb:UpdateItem
+#         Resource: !GetAtt ProductTableReference.Arn
+#       - Effect: Allow
+#         Action: sqs.SendMessage
+#         Resource: !GetAtt DeadLetterProduct.Arn  
+
+functions:
+  - ${file(src/tests/functions.yml)}
+
+
+resources:
+  # - ${file(./shared/resources/dynamo-db-tables.yml)}
+  # - ${file(./shared/resources/queues.yml)}
+
+package:
+  individually: true
+
+plugins:
+  - serverless-offline

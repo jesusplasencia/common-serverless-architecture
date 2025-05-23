@@ -1,0 +1,6 @@
+hello:
+  handler: src/tests/products/greet.handler
+  events:
+    - http:
+        path: greet
+        method: post

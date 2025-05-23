@@ -1,0 +1,35 @@
+{
+  "name": "common-product-system",
+  "version": "1.0.0",
+  "description": "Serverless solution to the Product-based System.",
+  "main": "index.js",
+  "scripts": {
+    "test": "DOTENV_CONFIG_PATH=./.env jest",
+    "dev": "sls offline start --dynamodbPort 8000",
+    "seed": "ts-node scripts/dynamodb-seed.ts",
+    "test:local": "DYNAMODB_ENDPOINT=http://localhost:8000 jest"
+  },
+  "author": "Jesus Plasencia",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.806.0",
+    "@aws-sdk/client-eventbridge": "^3.806.0",
+    "@aws-sdk/types": "^3.804.0",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.17",
+    "aws-sdk-client-mock": "^4.1.0",
+    "jest": "^29.7.0",
+    "serverless": "^4.14.4",
+    "serverless-offline": "^14.4.0",
+    "ts-jest": "^29.3.2",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

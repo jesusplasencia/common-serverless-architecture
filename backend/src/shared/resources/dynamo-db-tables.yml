@@ -1,0 +1,27 @@
+Resources:
+  ProductTableReference:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:provider.service}-${self:provider.stage}-product-reference
+      AttributeDefinitions:
+        - AttributeName: ods_product_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: ods_product_id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  LockTableReferece:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:provider.service}-${self:provider.stage}-lock-reference
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true

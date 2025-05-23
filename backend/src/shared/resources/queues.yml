@@ -1,0 +1,6 @@
+Resources:
+  DeadLetterProduct:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: ${self:provider.service}-${self:provider.stage}-dlq-product
+      MessageRetentionPeriod: 1209600 # 14 days
