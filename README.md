@@ -25,9 +25,9 @@ You can build, test, and run the entire backend locally using `serverless-offlin
 │   │   └── shared/     # Shared utils, types, constants, and integrations
 │   ├── serverless.yml  # Serverless framework declaration
 │   └── tsconfig.json   # TypeScript configuration for backend
+|   |__ .env            # Environment variables for local/dev usage
 │
 ├── docker-compose.yml  # Local DynamoDB service
-└── .env                # Environment variables for local/dev usage
 ```
 
 Each domain folder (`products`, `invoices`, `orders`) follows a **modular structure**, grouping all logic, types, and handlers related to that domain in one place. This improves testability, ownership, and scalability.

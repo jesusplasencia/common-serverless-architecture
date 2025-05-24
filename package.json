@@ -1,3 +1,14 @@
 {
-    
+  "name": "common-product-system",
+  "version": "1.0.0",
+  "description": "Serverless solution for a Product-based System.",
+  "main": "index.js",
+  "scripts": {
+    "build-cicd": "bash ./pipeline/run-cicd.sh $npm_package_name create $npm_config_stage",
+    "update-cicd": "bash ./pipeline/run-cicd.sh $npm_package_name update $npm_config_stage",
+    "build-cicd-windows": "bash ./pipeline/run-cicd.sh %npm_package_name update %npm_config_stage",
+    "update-cicd-windows": "bash ./pipeline/run-cicd.sh %npm_package_name update %npm_config_stage"
+  },
+  "author": "Jesus Plasencia",
+  "license": "MIT"
 }

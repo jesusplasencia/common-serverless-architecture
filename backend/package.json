@@ -1,7 +1,7 @@
 {
   "name": "common-product-system",
   "version": "1.0.0",
-  "description": "Serverless solution to the Product-based System.",
+  "description": "Serverless Solution for a Product-based System.",
   "main": "index.js",
   "scripts": {
     "test": "DOTENV_CONFIG_PATH=./.env jest",

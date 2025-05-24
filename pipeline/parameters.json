@@ -1,0 +1,10 @@
+[
+  {
+    "ParameterKey": "GitHubRepo",
+    "ParameterValue": "common-product-system"
+  },
+  {
+    "ParameterKey": "GitHubBranch",
+    "ParameterValue": "dev"
+  }
+]
